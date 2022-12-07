@@ -55,7 +55,7 @@
           "background": "p:green",
           "template": " \ue77f {{ .Full }} "
         },
-        {          
+        {
           "type": "node",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
@@ -86,6 +86,7 @@
           "background_templates": [
             "{{ if gt .Code 0 }}p:red{{ end }}"
           ],
+          "leading_diamond": "<transparent,p:blue>\ue0b0</>",
           "trailing_diamond": "\ue0b4",
           "template": "{{ if gt .Code 0 }} \uf7d3 {{else}} \uf7d0 {{ end }}",
           "properties": {
@@ -95,7 +96,8 @@
       ]
     },
     {
-      "type": "rprompt",
+      "alignment": "right",
+      "type": "prompt",
       "segments": [
         {
           "background": "transparent",
@@ -127,7 +129,6 @@
           "style": "plain",
           "template": " {{ .CurrentDate | date .Format }} ",
           "type": "time"
-          
         }
       ]
     },
