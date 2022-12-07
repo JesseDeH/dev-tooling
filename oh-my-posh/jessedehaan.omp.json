@@ -81,14 +81,23 @@
         {
           "type": "exit",
           "style": "diamond",
-          "foreground": "p:white",
-          "background": "p:blue",
-          "background_templates": [
-            "{{ if gt .Code 0 }}p:red{{ end }}"
-          ],
-          "leading_diamond": "<transparent,p:blue>\ue0b0</>",
+          "foreground": "p:green",
+          "background": "p:green",
+          "leading_diamond": "<transparent,p:green>\ue0b0</>",
           "trailing_diamond": "\ue0b4",
-          "template": "{{ if gt .Code 0 }} \uf7d3 {{else}} \uf7d0 {{ end }}",
+          "template": "{{ if le .Code 0 }}-{{ end }}",
+          "properties": {
+            "always_enabled": true
+          }
+        },
+        {
+          "type": "exit",
+          "style": "diamond",
+          "foreground": "p:red",
+          "background": "p:red",
+          "leading_diamond": "<transparent,p:red>\ue0b0</>",
+          "trailing_diamond": "\ue0b4",
+          "template": "{{ if gt .Code 0 }}-{{ end }}",
           "properties": {
             "always_enabled": true
           }
