@@ -26,13 +26,13 @@
           "type": "git",
           "style": "accordion",
           "powerline_symbol": "\ue0b0",
-          "foreground": "p:black",
+          "foreground": "p:white",
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}p:black{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:white{{ end }}",
             "{{ if gt .Ahead 0 }}p:white{{ end }}"
           ],
-          "background": "p:green",
+          "background": "p:blue",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}",
@@ -47,11 +47,19 @@
             "github_icon": "\uf7a3"
           }
         },
+        {
+          "type": "dotnet",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "p:white",
+          "background": "p:green",
+          "template": " \ue77f {{ .Full }} "
+        },
         {          
           "type": "node",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "p:black",
+          "foreground": "p:white",
           "background": "p:green",
           "properties": {
             "fetch_version": true
@@ -62,7 +70,7 @@
           "type": "python",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "p:black",
+          "foreground": "p:white",
           "background": "p:green",
           "template": " \uE235 {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} ",
           "properties": {
@@ -122,6 +130,19 @@
           
         }
       ]
+    },
+    {
+      "type": "prompt",
+      "newline": true,
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:white",
+          "template": "\u276F"
+        }
+      ]
     }
   ],
   "transient_prompt": {
@@ -132,16 +153,16 @@
   "secondary_prompt": {
     "foreground": "p:white",
     "background": "transparent",
-    "template": "<p:purple,transparent>\ue0b6</><,p:purple> > </><p:purple,transparent>\ue0b0</> "
+    "template": " > "
   },
   "palette": {
-    "black": "#262B44",
-    "blue": "#4B95E9",
-    "green": "#59C9A5",
-    "orange": "#F07623",
+    "black": "#212121",
+    "blue": "#38A4DD",
+    "green": "#289489",
+    "orange": "#F89845",
     "red": "#D81E5B",
-    "white": "#E0DEF4",
-    "yellow": "#F3AE35",
+    "white": "#FAFAFA",
+    "yellow": "#FFCE39",
     "purple": "#8664A9"
   }
 }
