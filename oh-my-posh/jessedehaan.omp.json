@@ -9,21 +9,13 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "session",
+          "type": "path",
           "style": "diamond",
           "foreground": "p:white",
           "background": "p:purple",
+          "template": " \uf74a {{ path .Path .Location }} ",
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b0",
-          "template": " {{ .UserName }} "
-        },
-        {
-          "type": "path",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
-          "foreground": "p:white",
-          "background": "p:orange",
-          "template": " \uf74a {{ path .Path .Location }} ",
           "properties": {
             "folder_separator_icon": " \ue0b1 ",
             "home_icon": "~",
@@ -32,7 +24,7 @@
         },
         {
           "type": "git",
-          "style": "powerline",
+          "style": "accordion",
           "powerline_symbol": "\ue0b0",
           "foreground": "p:black",
           "foreground_templates": [
@@ -99,11 +91,6 @@
       "segments": [
         {
           "background": "transparent",
-          "background_templates": [
-            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
-            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
-          ],
           "foreground": "p:white",
           "properties": {
             "charged_icon": "\ue22f ",
