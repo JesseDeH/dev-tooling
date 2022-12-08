@@ -1,0 +1,1 @@
+load(io.popen('oh-my-posh init cmd --config C:/Users/jhde/source/repos/dev-tooling/oh-my-posh/jessedehaan.omp.json'):read("*a"))()

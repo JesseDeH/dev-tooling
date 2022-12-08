@@ -1,0 +1,1 @@
+﻿oh-my-posh font install FiraCode
