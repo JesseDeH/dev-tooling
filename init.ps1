@@ -11,8 +11,7 @@ Try {
 Start-Process powershell -Verb runAs -ArgumentList "-file '.\scripts\Install-FiraCode.ps1'" -Wait
 
 # Configure Oh-My-Posh Powershell Profile
-Write-Host "Add oh-my-posh to Profile:"
-Write-Host "oh-my-posh init pwsh --config 'C:\Users\jhde\source\repos\dev-tooling\oh-my-posh\jessedehaan.omp.json' | Invoke-Expression"
+Write-Host "Configure oh-my-posh Powershell Profile:"
 mkdir -p "$env:USERPROFILE\oh-my-posh"
 Copy-Item -Path ".\oh-my-posh\jessedehaan.omp.json" -Destination "$env:USERPROFILE\oh-my-posh" -Force
 
@@ -20,7 +19,7 @@ $fileContent = Get-Content -Path $profile
 if ($fileContent -match "# oh-my-posh profile") {
   Write-Output "Oh-my-posh already configured."
 } else {
-  $rows = "# oh-my-posh profile", "oh-my-posh init pwsh --config '$env:USERPROFILE\oh-my-posh\jessedehaan.omp.json' | Invoke-Expression"
+  $rows = "", "# oh-my-posh profile", "oh-my-posh init pwsh --config '$env:USERPROFILE\oh-my-posh\jessedehaan.omp.json' | Invoke-Expression", ""
   $rows | Out-File -FilePath $profile -Append
   Write-Output "Oh-my-posh configured."
 }
